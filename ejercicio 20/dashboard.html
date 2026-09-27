@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="container">
+
+        <header class="header">
+            <button id="menuButton">☰</button>
+            Dashboard
+        </header>
+
+        <nav class="nav" id="nav">
+            <a href="#">Inicio</a>
+            <a href="#">Usuarios</a>
+            <a href="#">Configuración</a>
+        </nav>
+
+        <main class="main">
+            Contenido principal
+        </main>
+
+        <footer class="footer">
+            Información de mi empresa
+        </footer>
+
+    </div>
+
+    <script>const menuButton = document.getElementById("menuButton");
+        const nav = document.getElementById("nav");
+
+        menuButton.addEventListener("click", function () {
+            nav.classList.toggle("open");
+        });</script>
+</body>
+</html>

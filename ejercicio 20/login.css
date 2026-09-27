@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+form {
+    width: 100vw;
+    height: 100vh;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+input {
+    padding: 12px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+    body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form {
+        width: 400px;
+        height: auto;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+    }
+}
