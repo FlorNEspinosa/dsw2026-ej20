@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.grilla-layout {
+    display: grid;
+    min-height: 100vh;
+    grid-template-rows: 60px 1fr 40px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+.cabecera {
+    grid-area: header;
+    background-color: #0056b3;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 15px;
+}
+
+.btn-menu {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.contenido-principal {
+    grid-area: main;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.pie-pagina {
+    grid-area: footer;
+    background-color: #222;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+.navegacion {
+    display: none;
+}
+
+    .navegacion.desplegado {
+        display: block;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 250px;
+        height: calc(100vh - 60px);
+        background-color: #ffffff;
+        border-right: 1px solid #ccc;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+
+    .navegacion ul {
+        list-style: none;
+    }
+
+        .navegacion ul li a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #eee;
+        }
+
+            .navegacion ul li a:hover {
+                background-color: #f0f0f0;
+            }
+
+@media screen and (min-width: 768px) {
+    .grilla-layout {
+        grid-template-rows: 60px 1fr 40px;
+        grid-template-columns: 200px 1fr; /* Nav de 200px */
+        grid-template-areas:
+            "header header"
+            "nav main"
+            "footer footer";
+    }
+
+    .navegacion {
+        display: block; /* Siempre visible en escritorio */
+        position: static;
+        grid-area: nav;
+        width: 200px;
+        height: auto;
+        background-color: #f4f4f4;
+        border-right: 1px solid #ddd;
+        box-shadow: none;
+    }
+
+    .btn-menu {
+        display: none;
+    }
+}
