@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <button type="button"
+                    id="menuButton"
+                    aria-label="Abrir o cerrar navegación"
+                    aria-controls="nav"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            Dashboard
+        </header>
+
+        <nav class="nav" id="nav">
+            <a href="dashboard.html">Inicio</a>
+            <a href="#">Usuarios</a>
+            <a href="#">Configuración</a>
+        </nav>
+
+        <main class="main">
+            <h1>Panel principal</h1>
+            <p>Contenido principal</p>
+        </main>
+
+        <footer class="footer">
+            Información de mi empresa
+        </footer>
+
+    </div>
+
+    <script>
+                
+                const menuButton = document.getElementById("menuButton");
+                const nav = document.getElementById("nav");
+
+                
+                menuButton.addEventListener("click", function () {
+                  
+                    const abierto = nav.classList.toggle("open");
+
+                   
+                    menuButton.setAttribute("aria-expanded", String(abierto));
+                });
+    </script>
+
+</body>
+</html>
